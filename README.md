@@ -1,5 +1,5 @@
 # BernDirac
-A Mathematica package for performing calculations on matrices in the Dirac notation which is usually used in quantum mechanics/quantum computing. It utilises the built-in Mathematica "Ket[]" and "Bra[]" aliases.
+A Mathematica package for performing calculations involving matrices/vectors in the Dirac notation which is usually used in quantum mechanics/quantum computing. It utilises the built-in Mathematica "Ket[]" and "Bra[]" aliases.
 
 The package was written in Mathematica version 12.2 in Windows 10.
 
