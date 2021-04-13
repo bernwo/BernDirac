@@ -1,7 +1,7 @@
 # BernDirac
-A Mathematica package for performing calculations involving matrices/vectors in the Dirac notation which is usually used in quantum mechanics/quantum computing. It utilises the built-in Mathematica "Ket[]" and "Bra[]" aliases.
+A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the Dirac notation which is usually used in quantum mechanics/quantum computing. It utilises the built-in Mathematica **Ket[]** and **Bra[]** aliases.
 
-The package was written in Mathematica version 12.2 in Windows 10.
+The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 
 # Functions that this package provides.
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
