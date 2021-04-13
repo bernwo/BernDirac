@@ -20,3 +20,4 @@ At the time of writing this I am a graduate student with homework assignments in
 # TO-DO
  * Write a full fledged example usage within the [readme.md](https://github.com/bernie-wu/BernDirac/blob/main/README.md) itself.
  * Write better *usage* descriptions in [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl).
+ * Add more functions to [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl).
