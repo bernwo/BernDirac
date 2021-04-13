@@ -1,5 +1,5 @@
 # BernDirac
-A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`,`Bra[]`, and `CircleTimes[]`, along with their respective their alias, namely `[esc]ket[esc]`,`[esc]bra[esc]` and `[esc]c*[esc]`.
+A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective their alias, namely `[esc]ket[esc]`, `[esc]bra[esc]` and `[esc]c*[esc]`.
 
 The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 
