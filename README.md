@@ -16,3 +16,7 @@ The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/
 
 # Who am I and why did I create this package?
 At the time of writing this I am a graduate student with homework assignments involved in heavy and tedious quantum mechanics calculations. I created this Mathematica package to ease my life and since it helped me a tonne, I figured I should share this with the public too in case someone is also in the same boat as me.
+
+# TO-DO
+ * Write a full fledged example usage within the [readme.md](https://github.com/bernie-wu/BernDirac/blob/main/README.md) itself.
+ * Write better *usage* descriptions in [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl).
