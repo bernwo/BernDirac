@@ -1,5 +1,7 @@
 # BernDirac
-A Mathematica package for doing quantum mechanics/quantum computing computation in the Dirac notation. The package was written in Mathematica version 12.2 in Windows 10.
+A Mathematica package for doing quantum mechanics/quantum computing computation in the Dirac notation. It utilises the built-in Mathematica "Ket[]" and "Bra[]" aliases.
+
+The package was written in Mathematica version 12.2 in Windows 10.
 
 # Example
 The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
