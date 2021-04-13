@@ -4,6 +4,7 @@ A Mathematica package for doing quantum mechanics/quantum computing computation 
 The package was written in Mathematica version 12.2 in Windows 10.
 
 # Functions that this package provides.
+Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
  * **Ket[]**
  * **Bra[]**
  * **CircleTimes[]**
