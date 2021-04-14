@@ -7,19 +7,31 @@ The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run `Get[<path-to-BernDirac.wl>]`.
 
 # Functions that this package provides.
-Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
- * **Ket[]**
+Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:<br />
+-`Ket[]`<br />
+-`Bra[]`<br />
+-`CircleTimes[]`<br />
+-`DiracForm[]`<br />
+-`PartialTr[]`<br />
+## Ket[]
+The alias `| ⟩` for `Ket[]` can be obtained with `[esc]ket[esc]`.
+The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
-> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")<br />
+> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")
+>
 > ![|0⟩](Image/Ket_ket0_outv2.svg "|0⟩")
 
-> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")<br />
+> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")
+> 
 > ![|1⟩](Image/Ket_ket1_outv2.svg "|1⟩")
 
- * **Bra[]**
- * **CircleTimes[]**
- * **DiracForm[]**
- * **PartialTr[]**
+## Bra[]
+
+## CircleTimes[]
+
+## DiracForm[]
+
+## PartialTr[]
 
 # Example
 The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
