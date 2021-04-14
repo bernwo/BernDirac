@@ -25,6 +25,10 @@ The input for `Ket[]` is either `0` or `1` and the output for each case is as sh
 > 
 > ![|1⟩](Image/Ket_ket1_outv2.svg "|1⟩")
 
+`Ket[]` also supports multiple inputs, as long as they are `0` and `1`.
+
+>
+
 ## Bra[]
 
 ## CircleTimes[]
