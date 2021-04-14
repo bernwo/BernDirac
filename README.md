@@ -13,7 +13,7 @@ Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDir
 Get[<path-to-BernDirac.wl>];
 ```
 
-# Functions that this package provides.
+# Functions that this package provides
 After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session, the following additional functions become available to use:  
 →[`Ket[]`](#Ket "Go-to Ket[]")  
 →[`Bra[]`](#Bra "Go-to Bra[]")  
