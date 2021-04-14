@@ -7,14 +7,14 @@ A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for perfor
 The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10.
 
 # How to use?
-Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line:
+Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line to load the package into your current Mathematica session:
 
 ```wolframlanguage
 Get[<path-to-BernDirac.wl>];
 ```
 
 # Functions that this package provides.
-Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:  
+After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session, the following additional functions become available to use:  
 →[`Ket[]`](#Ket "Go-to Ket[]")  
 →[`Bra[]`](#Bra "Go-to Bra[]")  
 →[`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")  
