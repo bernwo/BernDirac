@@ -1,5 +1,5 @@
 # BernDirac
-A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, namely <code>"| ⟩" - <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>"⟨ |" - <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>"⊗" - <kbd>esc</kbd>c*<kbd>esc</kbd></code>.
+A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, namely <code>"| ⟩" → <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>"⟨ |" → <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>"⊗" → <kbd>esc</kbd>c*<kbd>esc</kbd></code>.
 
 The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 
@@ -8,11 +8,11 @@ Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDir
 
 # Functions that this package provides.
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:  
--[`Ket[]`](#Ket "Go-to Ket[]")  
--[`Bra[]`](#Bra "Go-to Bra[]")  
--[`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")  
--[`DiracForm[]`](#CircleTimes "Go-to DiracForm[]")  
--[`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
+→[`Ket[]`](#Ket "Go-to Ket[]")  
+→[`Bra[]`](#Bra "Go-to Bra[]")  
+→[`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")  
+→[`DiracForm[]`](#CircleTimes "Go-to DiracForm[]")  
+→[`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
 
 ## Ket[]
 The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
