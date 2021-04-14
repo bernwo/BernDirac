@@ -10,10 +10,10 @@ Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDir
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
  * **Ket[]**
 
-> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")
+> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")<br />
 > ![|0⟩](Image/Ket_ket0_out.svg "|0⟩")
 
-> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")
+> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")<br />
 > ![|1⟩](Image/Ket_ket1_out.svg "|1")
 
  * **Bra[]**
