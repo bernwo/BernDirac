@@ -14,7 +14,7 @@ Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDi
 →[`DiracForm[]`](#CircleTimes "Go-to DiracForm[]")  
 →[`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
 
-## Ket\[\]
+## Ket[]
 The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
