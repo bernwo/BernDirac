@@ -1,5 +1,5 @@
 # BernDirac
-A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, namely `"| ⟩" - [esc]ket[esc]`, `"⟨ |" - [esc]bra[esc]` and `"⊗" - [esc]c*[esc]`.
+A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, namely <code>"| ⟩" - <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>"⟨ |" - <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>"⊗" - <kbd>esc</kbd>c*<kbd>esc</kbd></code>.
 
 The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 
@@ -14,16 +14,14 @@ Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDi
 -`DiracForm[]`<br />
 -`PartialTr[]`<br />
 ## Ket[]
-The alias `| ⟩` for `Ket[]` can be obtained with `[esc]ket[esc]`.
+The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
-> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")
+>> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")  
+>> ![|0⟩](Image/Ket_ket0_outv2.svg "|0⟩")
 >
-> ![|0⟩](Image/Ket_ket0_outv2.svg "|0⟩")
-
-> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")
-> 
-> ![|1⟩](Image/Ket_ket1_outv2.svg "|1⟩")
+>> ![|1⟩](Image/Ket_ket1_in.svg "|1⟩")  
+>> ![|1⟩](Image/Ket_ket1_outv2.svg "|1⟩")
 
 `Ket[]` also supports multiple inputs, as long as they are `0` and `1`.
 
