@@ -44,10 +44,10 @@ The alias of `CircleTimes[]`, which is `⊗`, is used to denote the *Kronecker p
 Below, we show that `⊗` works for column vectors, row vectors, and square matrices:
 
 ## DiracForm[]
-`DiracForm` prints the vector or matrix using the Dirac notation.
+`DiracForm[]` prints the vector or matrix using the Dirac notation.
 
 ## PartialTr[]
-`PartialTr` performs partial trace of the system over the specified indices.
+`PartialTr[]` performs partial trace of the system over the specified indices.
 
 # Example
 The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
