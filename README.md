@@ -7,12 +7,12 @@ The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run `Get[<path-to-BernDirac.wl>]`.
 
 # Functions that this package provides.
-Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:<br />
--`Ket[]`<br />
--`Bra[]`<br />
--`CircleTimes[]`<br />
--`DiracForm[]`<br />
--`PartialTr[]`<br />
+Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:  
+-[<code>Ket[]</code>](## Ket[] "Go-to Ket[]")  
+-`Bra[]`  
+-`CircleTimes[]`  
+-`DiracForm[]`  
+-`PartialTr[]`  
 ## Ket[]
 The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
