@@ -3,6 +3,9 @@ A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for perfor
 
 The package was written in Wolfram Mathematica version 12.2 in Windows 10.
 
+# How to use?
+Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run `Get[<path-to-BernDirac.wl>]`.
+
 # Functions that this package provides.
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
  * **Ket[]**
