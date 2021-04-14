@@ -8,11 +8,12 @@ Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDir
 
 # Functions that this package provides.
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:  
--[<code>Ket[]</code>](## Ket[] "Go-to Ket[]")  
--`Bra[]`  
--`CircleTimes[]`  
--`DiracForm[]`  
--`PartialTr[]`  
+-[`Ket[]`](#Ket[] "Go-to Ket[]")  
+-[`Bra[]`](#Bra[] "Go-to Bra[]")  
+-[`CircleTimes[]`](#CircleTimes[] "Go-to CircleTimes[]")  
+-[`DiracForm[]`](#CircleTimes[] "Go-to DiracForm[]")  
+-[`PartialTr[]`](#CircleTimes[] "Go-to PartialTr[]")  
+
 ## Ket[]
 The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
@@ -25,7 +26,7 @@ The input for `Ket[]` is either `0` or `1` and the output for each case is as sh
 
 `Ket[]` also supports multiple inputs, as long as they are `0` and `1`.
 
->
+>  
 
 ## Bra[]
 
