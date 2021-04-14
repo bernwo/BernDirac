@@ -9,6 +9,9 @@ Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDir
 # Functions that this package provides.
 Importing [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session yields the following additional functions:
  * **Ket[]**
+
+> ![|0⟩](Image/ket0.svg "|0⟩")
+
  * **Bra[]**
  * **CircleTimes[]**
  * **DiracForm[]**
