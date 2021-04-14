@@ -23,7 +23,7 @@ After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/Be
 
 ## Ket[]
 `Ket[]` is used to denote a *column vector*. The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
-The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
+The allowed input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
 >> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")  
 >> ![|0⟩](Image/Ket_ket0_outv2.svg "|0⟩")
@@ -37,17 +37,17 @@ The input for `Ket[]` is either `0` or `1` and the output for each case is as sh
 
 ## Bra[]
 `Bra[]` is used to denote a *row vector*. The alias `⟨ |` for `Bra[]` can be obtained with <code><kbd>esc</kbd>bra<kbd>esc</kbd></code>.
-The input for `Bra[]` is either `0` or `1` and the output for each case is as shown here:
+The allowed input for `Bra[]` is either `0` or `1` and the output for each case is as shown here:
 
 ## CircleTimes[]
-The alias of `CircleTimes[]`, which is `⊗`, is used to denote the *Kronecker product* (sometimes also called *Tensor product*). Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
-Below, we show that `⊗` works for column vectors, row vectors, and square matrices:
+The alias `⊗` for `CircleTimes[]`, is used to denote the *Kronecker product* (sometimes also called *Tensor product*). Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
+Below, we show that `⊗` works for multiple column vectors, row vectors, and square matrices:
 
 ## DiracForm[]
 `DiracForm[]` prints the vector or matrix using the Dirac notation.
 
 ## PartialTr[]
-`PartialTr[]` performs partial trace of the system over the specified indices.
+`PartialTr[]` performs partial trace of a given system over the specified indices. This function takes 2 input arguments. The first input must be a *density matrix* (i.e. square matrix). The second input is a list of integer(s) indicating the indices where you would like to perform partial trace over.
 
 # Example
 The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
