@@ -4,7 +4,7 @@
 
 A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the built-in functions *without predefined meanings*: `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, namely <code>"| ⟩" → <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>"⟨ |" → <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>"⊗" → <kbd>esc</kbd>c*<kbd>esc</kbd></code>.
 
-The package was written in Wolfram Mathematica version [12.2](https://reference.wolfram.com/language/guide/SummaryOfNewFeaturesIn122.html) in Windows 10.
+The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10.
 
 # How to use?
 Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line:
