@@ -40,7 +40,7 @@ The input for `Ket[]` is either `0` or `1` and the output for each case is as sh
 The input for `Bra[]` is either `0` or `1` and the output for each case is as shown here:
 
 ## CircleTimes[]
-The alias of `CircleTimes[]`, which is `⊗`, is used to denote the *Kronecker product* or *Tensor product*. Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
+The alias of `CircleTimes[]`, which is `⊗`, is used to denote the *Kronecker product* (sometimes also called *Tensor product*). Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
 Below, we show that `⊗` works for column vectors, row vectors, and square matrices:
 
 ## DiracForm[]
