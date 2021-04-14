@@ -22,7 +22,7 @@ After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/Be
 →[`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
 
 ## Ket[]
-The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
+`Ket[]` is used to denote a *column vector*. The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
 >> ![|0⟩](Image/Ket_ket0_in.svg "|0⟩")  
@@ -36,12 +36,18 @@ The input for `Ket[]` is either `0` or `1` and the output for each case is as sh
 >  
 
 ## Bra[]
+`Bra[]` is used to denote a *row vector*. The alias `⟨ |` for `Bra[]` can be obtained with <code><kbd>esc</kbd>bra<kbd>esc</kbd></code>.
+The input for `Bra[]` is either `0` or `1` and the output for each case is as shown here:
 
 ## CircleTimes[]
+The alias of `CircleTimes[]`, which is `⊗`, is used to denote the *Kronecker product* or *Tensor product*. Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
+Below, we show that `⊗` works for column vectors, row vectors, and square matrices:
 
 ## DiracForm[]
+`DiracForm` prints the vector or matrix using the Dirac notation.
 
 ## PartialTr[]
+`PartialTr` performs partial trace of the system over the specified indices.
 
 # Example
 The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
