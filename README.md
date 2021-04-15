@@ -29,11 +29,11 @@ After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/Be
 `Ket[]` is used to denote a *column vector*. The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The allowed input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
->> ![Ket[0]](Image/Ket/ket0_in.svg)  
->> ![{{1},{0}}](Image/Ket/ket0_out.svg)
+>> ![In:Ket[0]](Image/Ket/ket0_in.svg "Ket[0]")  
+>> ![Out:{{1},{0}}](Image/Ket/ket0_out.svg "{{1},{0}}")
 >
->> ![Ket[1]](Image/Ket/ket1_in.svg)  
->> ![{{0},{1}}](Image/Ket/ket1_out.svg)
+>> ![In:Ket[1]](Image/Ket/ket1_in.svg "Ket[1]")  
+>> ![Out:{{0},{1}}](Image/Ket/ket1_out.svg "{{0},{1}}")
 
 `Ket[]` also supports multiple inputs, as long as they are `0` and `1`.
 
