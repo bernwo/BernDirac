@@ -41,6 +41,9 @@ ket]]];
 Bra[xsSeq___]:=Ket[xsSeq]\[ConjugateTranspose];
 
 
+Bra[Subscript[a_Symbol, n___]]:=Ket[Subscript[a, n]]\[ConjugateTranspose];
+
+
 PartialTr[squarematrix_List,loc_List]:=Catch[Module[{\[Rho],d,bits,sortedloc,loclength,lk0,lk1,\[DoubleStruckCapitalI]k0,\[DoubleStruckCapitalI]k1,\[DoubleStruckCapitalI]b0,\[DoubleStruckCapitalI]b1,k0,k1},
 d=Dimensions[squarematrix];
 bits=Ceiling[Log2[d[[1]]]];
@@ -64,6 +67,21 @@ lk1[[sortedloc[[i]]]]=k1;
 {i,1,loclength}
 ];
 \[Rho]]];
+
+
+Ket[Subscript[a_Symbol, n___]]:=Catch[
+Which[
+SameQ[a,\[FormalCapitalPhi]],
+Which[
+{n}=={0,0},{{1/(\[Sqrt]2)},{0},{0},{1/(\[Sqrt]2)}},
+{n}=={0,1},{{0},{1/(\[Sqrt]2)},{1/(\[Sqrt]2)},{0}},
+{n}=={1,0},{{1/(\[Sqrt]2)},{0},{0},{-(1/(\[Sqrt]2))}},
+{n}=={1,1},{{0},{1/(\[Sqrt]2)},{-(1/(\[Sqrt]2))},{0}},
+True,Throw[$Failed]],
+True,
+Throw[$Failed]
+]
+];
 
 
 DiracForm[squarematrix_List]:=Catch[Module[{sum,d,bits1,bits2,dBra,dKet},
