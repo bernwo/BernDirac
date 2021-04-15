@@ -110,9 +110,12 @@ Below, we show that `⊗` works for multiple column vectors, row vectors, and sq
 >> ![Out:PartialTr[αKet[0,1,1].Bra[0,1,1]+βKet[1,1,0].Bra[1,1,0],{2,3}]](Image/PartialTr/partialtr23_αketbra011_βketbra110_out.svg "α|0⟩.⟨0|+β|1⟩.⟨1|")  
 
 # Example
-The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
+The only file you need is [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl). A Mathematica notebook .nb file showing examples of how to use this package can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.  
+**Applying bit-flip on one qubit in a system of 3 qubits**
+>> ![In:Example1](Image/Example/eg_bitflip_in.svg "Example1")  
+>
+>> ![Out:Example1](Image/Example/eg_bitflip_out.svg "Example1")  
 
-* Apply X on one qubit (showcase ⊗)
 * Partial trace
 * Some kind of Hamiltonian?
 
