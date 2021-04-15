@@ -25,7 +25,7 @@ After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/Be
 →[`DiracForm[]`](#CircleTimes "Go-to DiracForm[]")  
 →[`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
 
-## Ket[]
+## <span style="color:red">Ket[]</span>
 `Ket[]` is used to denote a *column vector*. The alias `| ⟩` for `Ket[]` can be obtained with <code><kbd>esc</kbd>ket<kbd>esc</kbd></code>.
 The allowed input for `Ket[]` is either `0` or `1` and the output for each case is as shown here:
 
