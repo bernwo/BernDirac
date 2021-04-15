@@ -64,7 +64,7 @@ Note that `Bra[1,1,0]` is equivalent to `Bra[1]⊗Bra[1]⊗Bra[0]` (see [`Circle
 
 ## CircleTimes[]
 The alias `⊗` for `CircleTimes[]`, is used to denote the [*Kronecker product*](https://en.wikipedia.org/wiki/Kronecker_product) (sometimes also called [*Tensor product*](https://en.wikipedia.org/wiki/Tensor_product)). Use <code><kbd>esc</kbd>c*<kbd>esc</kbd></code> to obtain the alias.
-Below, we show that `⊗` works for multiple column vectors, row vectors, and square matrices.
+Below, we show that `⊗` works for multiple column vectors, row vectors, and square matrices.  
 **Column vector**
 >> ![In:Ket[1]⊗Ket[1]⊗Ket[0]](Image/Ket/ket110_tensor_in.svg "Ket[1]⊗Ket[1]⊗Ket[0]")  
 >
@@ -81,7 +81,7 @@ Below, we show that `⊗` works for multiple column vectors, row vectors, and sq
 >> ![Out:Ket[0].Bra[0]⊗Ket[1].Bra[1]](Image/BraKet/braket00_11_tensor_out.svg "{{{0, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}}") 
 
 ## DiracForm[]
-`DiracForm[]` prints the vector or matrix using the Dirac notation. It works for column vectors, row vectors, and square matrices.
+`DiracForm[]` prints the vector or matrix using the Dirac notation. It works for column vectors, row vectors, and square matrices.  
 **Column vector**
 >> ![In:αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]](Image/Ket/αket00_βket11_tensor_dirac_in.svg "αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]")  
 >
