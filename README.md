@@ -91,6 +91,9 @@ Below, we show that `⊗` works for multiple column vectors, row vectors, and sq
 **Square matrix**  
 >> ![In:(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])](Image/BraKet/αket00_βket11_αbra00_βbra11_tensor_dirac_in.svg "(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])")  
 >> ![Out:(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])](Image/BraKet/αket00_βket11_αbra00_βbra11_tensor_dirac_out.svg "α²|0,0⟩.⟨0,0|+αβ|0,0⟩.⟨1,1|+αβ|1,1⟩.⟨0,0|+β²|1,1⟩.⟨1,1|")  
+>
+>> ![In:{{a e+b g,a f+b h},{c e+d g,c f+d h}}](Image/BraKet/matrix_ketbra_in.svg "{{a e+b g,a f+b h},{c e+d g,c f+d h}}")  
+>> ![Out:{{a e+b g,a f+b h},{c e+d g,c f+d h}}](Image/BraKet/matrix_ketbra_out.svg "(a e+b g)|0⟩.⟨0|+(a f+b h)|0⟩.⟨1|+(c e+d g)|1⟩.⟨0|+(c f+d h)|1⟩.⟨1|")  
 
 ## Bell states
 By using the special letter capital dotted `Φ` and subscripts, we can access the four Bell states using [`Ket[]`](#Ket "Go-to Ket[]") and [`Bra[]`](#Ket "Go-to Ket[]"). Note that the special dotted `Φ` is known as [FormalCapitalPhi](https://reference.wolfram.com/language/ref/character/FormalCapitalPhi.html) in the documentation (for more information, see the formal letters section [here](https://reference.wolfram.com/language/tutorial/MathematicalAndOtherNotation.html)).
@@ -123,11 +126,11 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![In:Example1](Image/Example/eg_bitflip_in.svg "Example1")  
 >> ![Out:Example1](Image/Example/eg_bitflip_out.svg "Example1")  
 
-**Partial trace of a Bell state**  
+**Partial trace of a [Bell state](#Bell-states "Go-to Bell states")**  
 >> ![In:Example2](Image/Example/eg_partialtr_bellstate_in.svg "Example2")  
 >> ![Out:Example2](Image/Example/eg_partialtr_bellstate_out.svg "Example2")  
 
-**Density matrix after measuring one qubit in a Bell state**  
+**Density matrix after measuring one qubit in a [Bell state](#Bell-states "Go-to Bell states")**  
 >> ![In:Example3](Image/Example/eg_postmeasurement_in.svg "Example3")  
 >> ![Out:Example3](Image/Example/eg_postmeasurement_out.svg "Example3")  
 
