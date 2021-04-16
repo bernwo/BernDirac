@@ -111,7 +111,7 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![Out:Ket[FormalCapitalPhi_11]](Image/Bell_states/phi11_out.svg "|0,1⟩/√2-|1,0⟩/√2")  
 
 ## PartialTr[]
-`PartialTr[]` performs partial trace of a given system over the specified indices. This function takes 2 input arguments. The first input must be a *density matrix* (i.e. square matrix). The second input is a list of integer(s) indicating the indices where you would like to perform partial trace over.  
+`PartialTr[]` performs [partial trace](https://en.wikipedia.org/wiki/Partial_trace) of a given system over the specified indices. This function takes 2 input arguments. The first input must be a *density matrix* (i.e. square matrix). The second input is a list of integer(s) indicating the indices where you would like to perform partial trace over.  
 >> ![In:PartialTr[αKet[0,1,1].Bra[0,1,1]+βKet[1,1,0].Bra[1,1,0],{1}]](Image/PartialTr/partialtr1_αketbra011_βketbra110_in.svg "PartialTr[αKet[0,1,1].Bra[0,1,1]+βKet[1,1,0].Bra[1,1,0],{1}]")  
 >> ![Out:PartialTr[αKet[0,1,1].Bra[0,1,1]+βKet[1,1,0].Bra[1,1,0],{1}]](Image/PartialTr/partialtr1_αketbra011_βketbra110_out.svg "β|1,0⟩.⟨1,0|+α|1,1⟩.⟨1,1|")  
 >
