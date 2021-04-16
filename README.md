@@ -125,7 +125,7 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![In:Example2](Image/Example/eg_partialtr_bellstate_in.svg "Example2")  
 >> ![Out:Example2](Image/Example/eg_partialtr_bellstate_out.svg "Example2")  
 
-**Post measurement of one qubit in Bell state**  
+**Density matrix after measuring one qubit in a Bell state**  
 >> ![In:Example3](Image/Example/eg_postmeasurement_in.svg "Example3")  
 >> ![Out:Example3](Image/Example/eg_postmeasurement_out.svg "Example3")  
 
