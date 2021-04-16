@@ -1,7 +1,7 @@
 # BernDirac
-[![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)  
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  
-[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)  
+[![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)
 
 ![BernDiracLogo](Image/Logo/BernDirac_logo_v2.svg)  
 
