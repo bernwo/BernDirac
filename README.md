@@ -1,15 +1,17 @@
 # BernDirac
-[![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)
+[![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)  
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  
+[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)  
 
-![BernDiracLogo](Image/Logo/BernDirac_logo_v2.svg)
+![BernDiracLogo](Image/Logo/BernDirac_logo_v2.svg)  
 
-A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the *built-in functions without predefined meanings*, namely `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, <code>| ⟩ ↔ <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>⟨ | ↔ <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>⊗ ↔ <kbd>esc</kbd>c*<kbd>esc</kbd></code>.
+A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for performing calculations involving matrices/vectors in the [Dirac notation](https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation) which is usually used in [quantum mechanics](https://en.wikipedia.org/wiki/Quantum_mechanics)/[quantum computing](https://en.wikipedia.org/wiki/Quantum_computing). It utilises the *built-in functions without predefined meanings*, namely `Ket[]`, `Bra[]`, and `CircleTimes[]`, along with their respective alias, <code>| ⟩ ↔ <kbd>esc</kbd>ket<kbd>esc</kbd></code>, <code>⟨ | ↔ <kbd>esc</kbd>bra<kbd>esc</kbd></code> and <code>⊗ ↔ <kbd>esc</kbd>c*<kbd>esc</kbd></code>.  
 
-The basis which this package works in is {|0⟩,|1⟩}, which is also known as the *computational basis* or the *Z basis*.
+The basis which this package works in is {|0⟩,|1⟩}, which is also known as the *computational basis* or the *Z basis*.  
 
-The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10.
+The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10.  
+
+This package has zero dependencies.  
 
 # How to use?
 Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line to load the package into your current Mathematica session:
