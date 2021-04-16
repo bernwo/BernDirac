@@ -9,9 +9,11 @@ A [Wolfram Mathematica](https://www.wolfram.com/mathematica/) package for perfor
 
 The basis which this package works in is {|0⟩,|1⟩}, which is also known as the *computational basis* or the *Z basis*.  
 
-The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10.  
+The package was written in Wolfram Mathematica version [12.2](https://www.wolfram.com/mathematica/quick-revision-history.html) in Windows 10 and it has zero dependencies.  
 
-This package has zero dependencies.  
+## Contact
+Bernard Wo - bernardwu+BernDirac@outlook.my  
+Project Link: [https://github.com/bernie-wu/BernDirac](https://github.com/bernie-wu/BernDirac)  
 
 # How to use?
 Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line to load the package into your current Mathematica session:
