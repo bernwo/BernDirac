@@ -25,8 +25,8 @@ After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/Be
 * [`Ket[]`](#Ket "Go-to Ket[]")  
 * [`Bra[]`](#Bra "Go-to Bra[]")  
 * [`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")  
-* [`DiracForm[]`](#CircleTimes "Go-to DiracForm[]")  
-* [`PartialTr[]`](#CircleTimes "Go-to PartialTr[]")  
+* [`DiracForm[]`](#DiracForm "Go-to DiracForm[]")  
+* [`PartialTr[]`](#PartialTr "Go-to PartialTr[]")  
 
 The special quantities, namely the [**Bell states**](https://en.wikipedia.org/wiki/Bell_state) also become available to use via [`Ket[]`](#Ket "Go-to Ket[]") and [`Bra[]`](#Bra "Go-to Bra[]") (see section [Bell states](#Bell-states "Go-to Bell states")).
 
