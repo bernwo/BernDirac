@@ -1,7 +1,7 @@
 # BernDirac
 [![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)
+[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)
 
 ![BernDiracLogo](Image/Logo/BernDirac_logo_v2.svg)
 
@@ -125,12 +125,19 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![In:Example2](Image/Example/eg_partialtr_bellstate_in.svg "Example2")  
 >> ![Out:Example2](Image/Example/eg_partialtr_bellstate_out.svg "Example2")  
 
+**Post measurement of one qubit in Bell state**  
+>> ![In:Example3](Image/Example/eg_postmeasurement_in.svg "Example3")  
+>> ![Out:Example3](Image/Example/eg_postmeasurement_out.svg "Example3")  
+
 **Examples in Mathematica notebook**  
 A Mathematica notebook .nb file showing some usage examples can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
 
 # Who am I and why did I create this package?
 At the time of writing this I am a graduate student with homework assignments involved in heavy and tedious quantum mechanics calculations.  
-I created this Mathematica package to ease my life and since it helped me a tonne, I figured I should share this with the public too in case someone is also in the same boat as me.
+
+I created this Mathematica package to ease my life and since it helped me a tonne, I figured I should share this with the public too in case someone is also in the same boat as me.  
+
+I also know that there are other Mathematica packages out there that provides Dirac notation but those are too complicated to use for my taste, which is also partially why I made this package.
 
 # TO-DO
  * Write better *usage* descriptions in [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl).
