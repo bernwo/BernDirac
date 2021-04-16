@@ -134,6 +134,10 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![In:Example3](Image/Example/eg_postmeasurement_in.svg "Example3")  
 >> ![Out:Example3](Image/Example/eg_postmeasurement_out.svg "Example3")  
 
+**[Matrix exponential](https://en.wikipedia.org/wiki/Matrix_exponential) of the effective Hamiltonian of the spin states in a [Mølmer-Sørensen](https://en.wikipedia.org/wiki/M%C3%B8lmer%E2%80%93S%C3%B8rensen_gate) gate**  
+>> ![In:Example3](Image/Example/eg_matrixexp_in.svg "Example3")  
+>> ![Out:Example3](Image/Example/eg_matrixexp_out.svg "Example3")  
+
 **Examples in Mathematica notebook**  
 A Mathematica notebook .nb file showing some usage examples can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
 
