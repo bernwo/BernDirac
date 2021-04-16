@@ -39,7 +39,6 @@ The allowed input for `Ket[]` is either `0` or `1` and the output for each case 
 `Ket[]` also supports multiple inputs, as long as they are `0` and `1`.
 
 >> ![In:Ket[1,1,0]](Image/Ket/ket110_in.svg "Ket[1,1,0]")  
->
 >> ![Out:Ket[1,1,0]](Image/Ket/ket110_out.svg "{{0},{0},{0},{0},{0},{0},{1},{0}}")
 
 Note that `Ket[1,1,0]` is equivalent to `Ket[1]⊗Ket[1]⊗Ket[0]` (see [`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")).
@@ -57,7 +56,6 @@ The allowed input for `Bra[]` is either `0` or `1` and the output for each case 
 Just like `Ket[]`, `Bra[]` also supports multiple inputs, as long as they are `0` and `1`.
 
 >> ![In:Bra[1,1,0]](Image/Bra/bra110_in.svg "Bra[1,1,0]")  
->
 >> ![Out:Bra[1,1,0]](Image/Bra/bra110_out.svg "{{0,0,0,0,0,0,1,0}}")
 
 Note that `Bra[1,1,0]` is equivalent to `Bra[1]⊗Bra[1]⊗Bra[0]` (see [`CircleTimes[]`](#CircleTimes "Go-to CircleTimes[]")).
@@ -67,34 +65,28 @@ The alias `⊗` for `CircleTimes[]`, is used to denote the [*Kronecker product*]
 Below, we show that `⊗` works for multiple column vectors, row vectors, and square matrices.  
 **Column vector**
 >> ![In:Ket[1]⊗Ket[1]⊗Ket[0]](Image/Ket/ket110_tensor_in.svg "Ket[1]⊗Ket[1]⊗Ket[0]")  
->
 >> ![Out:Ket[1]⊗Ket[1]⊗Ket[0]](Image/Ket/ket110_out.svg "{{0},{0},{0},{0},{0},{0},{1},{0}}")  
 
 **Row vector**
 >> ![In:Bra[1]⊗Bra[1]⊗Bra[0]](Image/Bra/bra110_tensor_in.svg "Bra[1]⊗Bra[1]⊗Bra[0]")  
->
 >> ![Out:Bra[1,1,0]](Image/Bra/bra110_out.svg "{{0,0,0,0,0,0,1,0}}")  
 
 **Square matrix**
 >> ![In:Ket[0].Bra[0]⊗Ket[1].Bra[1]](Image/BraKet/braket00_11_tensor_in.svg "Ket[0].Bra[0]⊗Ket[1].Bra[1]") 
->
 >> ![Out:Ket[0].Bra[0]⊗Ket[1].Bra[1]](Image/BraKet/braket00_11_tensor_out.svg "{{{0, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}}") 
 
 ## DiracForm[]
 `DiracForm[]` prints the vector or matrix using the Dirac notation. It works for column vectors, row vectors, and square matrices.  
-**Column vector**
+**Column vector**  
 >> ![In:αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]](Image/Ket/αket00_βket11_tensor_dirac_in.svg "αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]")  
->
 >> ![Out:αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]](Image/Ket/αket00_βket11_tensor_dirac_out.svg "α|0,0⟩+β|1,1⟩")  
 
-**Row vector**
+**Row vector**  
 >> ![In:αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1]](Image/Bra/αbra00_βbra11_tensor_dirac_in.svg "αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1]")  
->
 >> ![Out:αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1]](Image/Bra/αbra00_βbra11_tensor_dirac_out.svg "α⟨0,0|+β⟨1,1|")  
 
-**Square matrix**
+**Square matrix**  
 >> ![In:(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])](Image/BraKet/αket00_βket11_αbra00_βbra11_tensor_dirac_in.svg "(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])")  
->
 >> ![Out:(αKet[0]⊗Ket[0]+βKet[1]⊗Ket[1]).(αBra[0]⊗Bra[0]+βBra[1]⊗Bra[1])](Image/BraKet/αket00_βket11_αbra00_βbra11_tensor_dirac_out.svg "α²|0,0⟩.⟨0,0|+αβ|0,0⟩.⟨1,1|+αβ|1,1⟩.⟨0,0|+β²|1,1⟩.⟨1,1|")  
 
 ## Bell states
@@ -124,17 +116,15 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 >> ![Out:PartialTr[αKet[0,1,1].Bra[0,1,1]+βKet[1,1,0].Bra[1,1,0],{2,3}]](Image/PartialTr/partialtr23_αketbra011_βketbra110_out.svg "α|0⟩.⟨0|+β|1⟩.⟨1|")  
 
 # Example  
-**Applying bit-flip on one qubit in a system of 3 qubits**
+**Applying bit-flip on one qubit in a system of 3 qubits**  
 >> ![In:Example1](Image/Example/eg_bitflip_in.svg "Example1")  
->
 >> ![Out:Example1](Image/Example/eg_bitflip_out.svg "Example1")  
 
-**Partial trace of a Bell state**
+**Partial trace of a Bell state**  
 >> ![In:Example2](Image/Example/eg_partialtr_bellstate_in.svg "Example2")  
->
 >> ![Out:Example2](Image/Example/eg_partialtr_bellstate_out.svg "Example2")  
 
-**Examples in Mathematica notebook**
+**Examples in Mathematica notebook**  
 A Mathematica notebook .nb file showing some usage examples can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
 
 # Who am I and why did I create this package?
