@@ -15,7 +15,10 @@ Bra::usage="Bra[a] where a\[Element]{0,1}."
 PartialTr::usage="PartialTr[square_matrix,loc_list] performs partial trace on the square_matrix at 'indices' given by loc_list."
 
 
-DiracForm::usage="DiracForm[A] where A could be either a square matrix, a column vector or transpose of a column vector. It outputs the given input in Dirac notation (i.e. Ket and Bra)."
+DiracForm::usage="DiracForm[A] where A could be either a square matrix, a column vector or a row vector. It outputs the given input in Dirac notation (i.e. Ket and Bra)."
+
+
+SimpDiracForm::usage="SimpDiracForm[A] where A could be either a square matrix, a column vector or a row vector. It outputs the given input in Dirac notation where the terms with common coefficients are grouped together."
 
 
 Begin["`Private`"]
@@ -103,6 +106,45 @@ sum=Which[d[[1]]==d[[2]],
 ,True,
 Throw[$Failed]];
 sum]];
+
+
+SimpDiracForm[v_List]:=Catch[Module[{out,sum,d,bits1,bits2,dBra,dKet,unique\[Ellipsis]coeff,lu,c},
+d=Dimensions[v];
+dBra[{b1__}]:=Defer[Bra[b1]];
+dKet[{b2__}]:=Defer[Ket[b2]];
+bits1=Ceiling[Log2[d[[1]]]];
+bits2=Ceiling[Log2[d[[2]]]];
+unique\[Ellipsis]coeff=DeleteCases[DeleteDuplicates@*Flatten@v,0,Infinity];
+lu=unique\[Ellipsis]coeff//Length;
+c=Apply[PolynomialGCD,unique\[Ellipsis]coeff];
+sum=ConstantArray[0,lu];
+Which[d[[1]]==d[[2]],
+Do[
+If[v[[i,j]]===unique\[Ellipsis]coeff[[k]],sum[[k]]+=dKet[IntegerDigits[i-1,2,bits1]] . dBra[IntegerDigits[j-1,2,bits2]]];
+,
+{k,1,lu},
+{i,1,d[[1]]},
+{j,1,d[[2]]}
+];
+,d[[1]]==1&&d[[2]]>1,
+Do[
+If[v[[1,j]]===unique\[Ellipsis]coeff[[k]],sum[[k]]+=dBra[IntegerDigits[j-1,2,bits2]]];
+,
+{k,1,lu},
+{j,1,d[[2]]}
+];
+,d[[1]]>1&&d[[2]]==1,
+Do[
+If[v[[i,1]]===unique\[Ellipsis]coeff[[k]],sum[[k]]+=dKet[IntegerDigits[i-1,2,bits1]]];
+,
+{k,1,lu},
+{i,1,d[[1]]}
+];
+,True,
+Throw[$Failed]
+];
+out=c*Dot[sum,unique\[Ellipsis]coeff/c];
+out]];
 
 
 End[];
