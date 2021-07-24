@@ -3,6 +3,9 @@
 BeginPackage["BernDirac`"];
 
 
+Protect[\[FormalCapitalC]X,\[FormalCapitalC]NOT,\[FormalCapitalC]Z,\[FormalCapitalS]WAP,\[FormalCapitalT]OFFOLI,\[FormalSigma]p,\[FormalSigma]n,\[FormalCapitalS]X,\[FormalCapitalS]Y,\[FormalCapitalS]Z,\[FormalCapitalS]p,\[FormalCapitalS]n,\:ff0d,\:ff0b];
+
+
 CircleTimes::usage="a\[CircleTimes]b is the alias for KroneckerProduct[a,b]."
 
 
@@ -10,6 +13,9 @@ Ket::usage="Ket[a] where a\[Element]{0,1}."
 
 
 Bra::usage="Bra[a] where a\[Element]{0,1}."
+
+
+OverHat::usage="Provides some common quantum logic gates."
 
 
 PartialTr::usage="PartialTr[square_matrix,loc_list] performs partial trace on the square_matrix at 'indices' given by loc_list."
@@ -31,7 +37,7 @@ Ket[xsSeq___]:=Catch[With[{xs={xsSeq}}
 ,
 Module[{ket,tket,n=Length[xs]},
 Do[
-tket=Which[xs[[t]]==0,{{1},{0}},xs[[t]]==1,{{0},{1}},True,Throw[$Failed]];
+tket=Which[SameQ[xs[[t]],0],{{1},{0}},SameQ[xs[[t]],1],{{0},{1}},SameQ[xs[[t]],\:ff0b],{{1/Sqrt[2]},{1/Sqrt[2]}},SameQ[xs[[t]],\:ff0d],{{1/Sqrt[2]},{-(1/Sqrt[2])}},True,Throw[$Failed]];
 If[t==1
 ,ket=tket;
 ,ket=KroneckerProduct[ket,tket];
@@ -39,6 +45,19 @@ If[t==1
 ,
 {t,n}];
 ket]]];
+Ket[Subscript[a_Symbol, n___]]:=Catch[
+Which[
+SameQ[a,\[FormalCapitalPhi]],
+Which[
+{n}=={0,0},{{1/(\[Sqrt]2)},{0},{0},{1/(\[Sqrt]2)}},
+{n}=={0,1},{{0},{1/(\[Sqrt]2)},{1/(\[Sqrt]2)},{0}},
+{n}=={1,0},{{1/(\[Sqrt]2)},{0},{0},{-(1/(\[Sqrt]2))}},
+{n}=={1,1},{{0},{1/(\[Sqrt]2)},{-(1/(\[Sqrt]2))},{0}},
+True,Throw[$Failed]],
+True,
+Throw[$Failed]
+]
+];
 
 
 Bra[xsSeq___]:=Ket[xsSeq]\[ConjugateTranspose];
@@ -72,17 +91,44 @@ lk1[[sortedloc[[i]]]]=k1;
 \[Rho]]];
 
 
-Ket[Subscript[a_Symbol, n___]]:=Catch[
+OverHat[a_Symbol]:=Catch[
 Which[
-SameQ[a,\[FormalCapitalPhi]],
-Which[
-{n}=={0,0},{{1/(\[Sqrt]2)},{0},{0},{1/(\[Sqrt]2)}},
-{n}=={0,1},{{0},{1/(\[Sqrt]2)},{1/(\[Sqrt]2)},{0}},
-{n}=={1,0},{{1/(\[Sqrt]2)},{0},{0},{-(1/(\[Sqrt]2))}},
-{n}=={1,1},{{0},{1/(\[Sqrt]2)},{-(1/(\[Sqrt]2))},{0}},
-True,Throw[$Failed]],
-True,
-Throw[$Failed]
+SameQ[a,\[FormalCapitalX]],
+{{0,1},{1,0}}
+,SameQ[a,\[FormalCapitalY]],
+{{0,-I},{I,0}}
+,SameQ[a,\[FormalCapitalZ]],
+{{1,0},{0,-1}}
+,SameQ[a,\[FormalCapitalS]X],
+{{0,1/2},{1/2,0}}
+,SameQ[a,\[FormalCapitalS]Y],
+{{0,-I/2},{I/2,0}}
+,SameQ[a,\[FormalCapitalS]Z],
+{{1/2,0},{0,-1/2}}
+,SameQ[a,\[FormalCapitalH]],
+{{1/Sqrt[2],1/Sqrt[2]},{1/Sqrt[2],-(1/Sqrt[2])}}
+,SameQ[a,\[FormalCapitalS]],
+{{1,0},{0,I}}
+,SameQ[a,\[FormalCapitalT]],
+{{1,0},{0,E^((I \[Pi])/4)}}
+,SameQ[a,\[FormalCapitalC]X]\[Or]SameQ[a,\[FormalCapitalC]NOT],
+{{1,0,0,0},{0,1,0,0},{0,0,0,1},{0,0,1,0}}
+,SameQ[a,\[FormalCapitalC]Z],
+{{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,-1}}
+,SameQ[a,\[FormalSigma]p],(*Overscript[\[FormalSigma]p, ^]==1/2(Overscript[\[FormalCapitalX], ^]-\[ImaginaryI]Overscript[\[FormalCapitalY], ^])*)
+{{0,0},{1,0}}
+,SameQ[a,\[FormalSigma]n],(*Overscript[\[FormalSigma]n, ^]==1/2(Overscript[\[FormalCapitalX], ^]+\[ImaginaryI]Overscript[\[FormalCapitalY], ^])*)
+{{0,1},{0,0}}
+,SameQ[a,\[FormalCapitalS]p],
+{{0,0},{1/2,0}}
+,SameQ[a,\[FormalCapitalS]n],
+{{0,1/2},{0,0}}
+,SameQ[a,\[FormalCapitalS]WAP],
+{{1,0,0,0},{0,0,1,0},{0,1,0,0},{0,0,0,1}}
+,SameQ[a,\[FormalCapitalT]OFFOLI],
+{{1,0,0,0,0,0,0,0},{0,1,0,0,0,0,0,0},{0,0,1,0,0,0,0,0},{0,0,0,1,0,0,0,0},{0,0,0,0,1,0,0,0},{0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1},{0,0,0,0,0,0,1,0}}
+,True,
+$Failed
 ]
 ];
 
