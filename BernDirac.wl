@@ -30,7 +30,13 @@ SimpDiracForm::usage="SimpDiracForm[A] where A could be either a square matrix, 
 Begin["`Private`"]
 
 
-CircleTimes[xs___]:=KroneckerProduct[xs];
+CircleTimes[xsSeq___]:=KroneckerProduct[xsSeq]/;(Dimensions[{xsSeq}][[1]]>=2);
+CircleTimes/:(Superscript[m_List,\[CircleTimes]xsSeq_Integer]):=Catch[Module[{out,temp},
+out=m;
+temp=m;
+Do[out=KroneckerProduct[temp,out];,{i,1,xsSeq-1}];
+out
+]];
 
 
 Ket[xsSeq___]:=Catch[With[{xs={xsSeq}}
@@ -66,29 +72,47 @@ Bra[xsSeq___]:=Ket[xsSeq]\[ConjugateTranspose];
 Bra[Subscript[a_Symbol, n___]]:=Ket[Subscript[a, n]]\[ConjugateTranspose];
 
 
-PartialTr[squarematrix_List,loc_List]:=Catch[Module[{\[Rho],d,bits,sortedloc,loclength,lk0,lk1,\[DoubleStruckCapitalI]k0,\[DoubleStruckCapitalI]k1,\[DoubleStruckCapitalI]b0,\[DoubleStruckCapitalI]b1,k0,k1},
-d=Dimensions[squarematrix];
-bits=Ceiling[Log2[d[[1]]]];
+Options[PartialTr]={"Basis"->Automatic}
+PartialTr[a_List,loc_List,OptionsPattern[]]:=Catch[
+With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Length[loc]]]},
+Module[{\[Rho]=a,d=Dimensions[a],bits1,bits2,sortedloc,loclength=Length[loc],sortedbasis,basislength,lk0,lk1,\[DoubleStruckCapitalI]k0,\[DoubleStruckCapitalI]k1,\[DoubleStruckCapitalI]b0,\[DoubleStruckCapitalI]b1,k0={{1},{0}},k1={{0},{1}},kp={{1/Sqrt[2]},{1/Sqrt[2]}},kn={{1/Sqrt[2]},{-(1/Sqrt[2])}}},
+bits1=Ceiling[Log2[d[[1]]]];
+bits2=Ceiling[Log2[d[[2]]]];
 sortedloc=Sort[loc,Greater];
-loclength=Length[sortedloc];
-Which[d[[1]]!=d[[2]],Throw[$Failed],sortedloc[[1]]>bits,Throw[$Failed]];
-k0={{1},{0}};
-k1={{0},{1}};
-\[Rho]=squarematrix;
-Do[
-lk0=ConstantArray[IdentityMatrix[2],bits+1-i];
-lk0[[sortedloc[[i]]]]=k0;
+sortedbasis=basis[[Reverse[Ordering@loc]]];
+basislength=Length[sortedbasis];
+Which[d[[1]]==d[[2]],Do[
+lk0=ConstantArray[IdentityMatrix[2],bits1+1-i];
+lk0[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k0,SameQ[sortedbasis[[i]],"X"],kp];
 \[DoubleStruckCapitalI]k0=Apply[KroneckerProduct,lk0];
-lk1=ConstantArray[IdentityMatrix[2],bits+1-i];
-lk1[[sortedloc[[i]]]]=k1;
+lk1=ConstantArray[IdentityMatrix[2],bits1+1-i];
+lk1[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k1,SameQ[sortedbasis[[i]],"X"],kn];
 \[DoubleStruckCapitalI]k1=Apply[KroneckerProduct,lk1];
 \[DoubleStruckCapitalI]b0=\[DoubleStruckCapitalI]k0\[ConjugateTranspose];
 \[DoubleStruckCapitalI]b1=\[DoubleStruckCapitalI]k1\[ConjugateTranspose];
-\[Rho]=\[DoubleStruckCapitalI]b0 . \[Rho] . \[DoubleStruckCapitalI]k0+\[DoubleStruckCapitalI]b1 . \[Rho] . \[DoubleStruckCapitalI]k1;
+\[Rho]=\[DoubleStruckCapitalI]b0 . \[Rho] . \[DoubleStruckCapitalI]k0+\[DoubleStruckCapitalI]b1 . \[Rho] . \[DoubleStruckCapitalI]k1;,{i,1,loclength}];
 ,
-{i,1,loclength}
-];
-\[Rho]]];
+d[[1]]==1&&d[[2]]>1,Do[
+lk0=ConstantArray[IdentityMatrix[2],bits2+1-i];
+lk0[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k0,SameQ[sortedbasis[[i]],"X"],kp];
+\[DoubleStruckCapitalI]k0=Apply[KroneckerProduct,lk0];
+lk1=ConstantArray[IdentityMatrix[2],bits2+1-i];
+lk1[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k1,SameQ[sortedbasis[[i]],"X"],kn];
+\[DoubleStruckCapitalI]k1=Apply[KroneckerProduct,lk1];
+\[Rho]=\[Rho] . \[DoubleStruckCapitalI]k0+\[Rho] . \[DoubleStruckCapitalI]k1;,{i,1,loclength}];
+,
+d[[1]]>1&&d[[2]]==1,Do[
+lk0=ConstantArray[IdentityMatrix[2],bits1+1-i];
+lk0[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k0,SameQ[sortedbasis[[i]],"X"],kp];
+\[DoubleStruckCapitalI]k0=Apply[KroneckerProduct,lk0];
+lk1=ConstantArray[IdentityMatrix[2],bits1+1-i];
+lk1[[sortedloc[[i]]]]=Which[SameQ[sortedbasis[[i]],"Z"],k1,SameQ[sortedbasis[[i]],"X"],kn];
+\[DoubleStruckCapitalI]k1=Apply[KroneckerProduct,lk1];
+\[DoubleStruckCapitalI]b0=\[DoubleStruckCapitalI]k0\[ConjugateTranspose];
+\[DoubleStruckCapitalI]b1=\[DoubleStruckCapitalI]k1\[ConjugateTranspose];
+\[Rho]=\[DoubleStruckCapitalI]b0 . \[Rho]+\[DoubleStruckCapitalI]b1 . \[Rho];,{i,1,loclength}];
+,sortedloc[[1]]>Max[{bits1,bits2}],Throw[$Failed],True,Throw[$Failed]];
+\[Rho]]]];
 
 
 OverHat[a_Symbol]:=Catch[
@@ -133,25 +157,36 @@ $Failed
 ];
 
 
-DiracForm[squarematrix_List]:=Catch[Module[{sum,d,bits1,bits2,dBra,dKet},
-d=Dimensions[squarematrix];
+Options[DiracForm]={"Basis"->Automatic}
+DiracForm[a_List,OptionsPattern[]]:=Catch[
+With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Max[Ceiling[Log2[Dimensions[a][[1]]]],Ceiling[Log2[Dimensions[a][[2]]]]]]]},
+Module[{mutable\[Ellipsis]a,sum,d=Dimensions[a],bits1,bits2,maxbits,dBra,dKet,unitary,KProduct,where\[Ellipsis]X,ReplaceBasis},
 dBra[{b1__}]:=Defer[Bra[b1]];
 dKet[{b2__}]:=Defer[Ket[b2]];
+KProduct[{u___}]:=KroneckerProduct[u];
+ReplaceBasis[{l___},loc_List]:=Module[{m=l},m[[loc]]=m[[loc]]/.{p_?NumericQ/;p==1->\:ff0d,q_?NumericQ/;q==0->\:ff0b};m];
 bits1=Ceiling[Log2[d[[1]]]];
 bits2=Ceiling[Log2[d[[2]]]];
+maxbits=Max[{bits1,bits2}];
+unitary=ConstantArray[IdentityMatrix[2],maxbits];
+where\[Ellipsis]X=Flatten[Position[basis,"X"]];
+Do[unitary[[where\[Ellipsis]X[[k]],All,All]]={{1/Sqrt[2],1/Sqrt[2]},{1/Sqrt[2],-(1/Sqrt[2])}};,{k,1,Length[where\[Ellipsis]X]}];
 sum=Which[d[[1]]==d[[2]],
+mutable\[Ellipsis]a=KProduct[unitary] . a . KProduct[unitary]\[ConjugateTranspose];
 \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(d[\([1]\)]\)]\(
-\*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((squarematrix[\([i, j]\)]*dKet[IntegerDigits[i - 1, 2, bits1]] . dBra[IntegerDigits[j - 1, 2, bits1]])\)\)\)
+\*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((mutable\[Ellipsis]a[\([i, j]\)]*dKet[ReplaceBasis[{IntegerDigits[i - 1, 2, bits1]}, where\[Ellipsis]X]] . dBra[ReplaceBasis[{IntegerDigits[j - 1, 2, bits1]}, where\[Ellipsis]X]])\)\)\)
 ,d[[1]]==1&&d[[2]]>1,
+mutable\[Ellipsis]a=a . KProduct[unitary]\[ConjugateTranspose];
 \!\(
-\*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((squarematrix[\([1, j]\)]*dBra[IntegerDigits[j - 1, 2, bits2]])\)\)
+\*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((mutable\[Ellipsis]a[\([1, j]\)]*dBra[ReplaceBasis[{IntegerDigits[j - 1, 2, bits2]}, where\[Ellipsis]X]])\)\)
 ,d[[1]]>1&&d[[2]]==1,
+mutable\[Ellipsis]a=KProduct[unitary] . a;
 \!\(
-\*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(d[\([1]\)]\)]\((squarematrix[\([i, 1]\)]*dKet[IntegerDigits[i - 1, 2, bits1]])\)\)
+\*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(d[\([1]\)]\)]\((mutable\[Ellipsis]a[\([i, 1]\)]*dKet[ReplaceBasis[{IntegerDigits[i - 1, 2, bits1]}, where\[Ellipsis]X]])\)\)
 ,True,
 Throw[$Failed]];
-sum]];
+sum]]];
 
 
 SimpDiracForm[v_List]:=Catch[Module[{out,sum,d,bits1,bits2,dBra,dKet,unique\[Ellipsis]coeff,lu,c},
