@@ -163,7 +163,7 @@ With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Max[Ceilin
 Module[{mutable\[Ellipsis]a,sum,d=Dimensions[a],bits1,bits2,maxbits,dBra,dKet,unitary,KProduct,where\[Ellipsis]X,ReplaceBasis},
 dBra[{b1__}]:=Defer[Bra[b1]];
 dKet[{b2__}]:=Defer[Ket[b2]];
-KProduct[{u___}]:=KroneckerProduct[u];
+KProduct[{u___},maxbits_]:=If[maxbits>1,KroneckerProduct[u],u];
 ReplaceBasis[{l___},loc_List]:=Module[{m=l},m[[loc]]=m[[loc]]/.{p_?NumericQ/;p==1->\:ff0d,q_?NumericQ/;q==0->\:ff0b};m];
 bits1=Ceiling[Log2[d[[1]]]];
 bits2=Ceiling[Log2[d[[2]]]];
@@ -172,16 +172,16 @@ unitary=ConstantArray[IdentityMatrix[2],maxbits];
 where\[Ellipsis]X=Flatten[Position[basis,"X"]];
 Do[unitary[[where\[Ellipsis]X[[k]],All,All]]={{1/Sqrt[2],1/Sqrt[2]},{1/Sqrt[2],-(1/Sqrt[2])}};,{k,1,Length[where\[Ellipsis]X]}];
 sum=Which[d[[1]]==d[[2]],
-mutable\[Ellipsis]a=KProduct[unitary] . a . KProduct[unitary]\[ConjugateTranspose];
+mutable\[Ellipsis]a=KProduct[unitary,maxbits] . a . KProduct[unitary,maxbits]\[ConjugateTranspose];
 \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(d[\([1]\)]\)]\(
 \*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((mutable\[Ellipsis]a[\([i, j]\)]*dKet[ReplaceBasis[{IntegerDigits[i - 1, 2, bits1]}, where\[Ellipsis]X]] . dBra[ReplaceBasis[{IntegerDigits[j - 1, 2, bits1]}, where\[Ellipsis]X]])\)\)\)
 ,d[[1]]==1&&d[[2]]>1,
-mutable\[Ellipsis]a=a . KProduct[unitary]\[ConjugateTranspose];
+mutable\[Ellipsis]a=a . KProduct[unitary,maxbits]\[ConjugateTranspose];
 \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(j = 1\), \(d[\([2]\)]\)]\((mutable\[Ellipsis]a[\([1, j]\)]*dBra[ReplaceBasis[{IntegerDigits[j - 1, 2, bits2]}, where\[Ellipsis]X]])\)\)
 ,d[[1]]>1&&d[[2]]==1,
-mutable\[Ellipsis]a=KProduct[unitary] . a;
+mutable\[Ellipsis]a=KProduct[unitary,maxbits] . a;
 \!\(
 \*UnderoverscriptBox[\(\[Sum]\), \(i = 1\), \(d[\([1]\)]\)]\((mutable\[Ellipsis]a[\([i, 1]\)]*dKet[ReplaceBasis[{IntegerDigits[i - 1, 2, bits1]}, where\[Ellipsis]X]])\)\)
 ,True,
