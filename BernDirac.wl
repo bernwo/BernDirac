@@ -163,7 +163,7 @@ With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Max[Ceilin
 Module[{mutable\[Ellipsis]a,sum,d=Dimensions[a],bits1,bits2,maxbits,dBra,dKet,unitary,KProduct,where\[Ellipsis]X,ReplaceBasis},
 dBra[{b1__}]:=Defer[Bra[b1]];
 dKet[{b2__}]:=Defer[Ket[b2]];
-KProduct[{u___},maxbits_]:=If[maxbits>1,KroneckerProduct[u],u];
+KProduct[{u___},maxbits_]:=Which[maxbits>1,KroneckerProduct[u],maxbits==1,u];
 ReplaceBasis[{l___},loc_List]:=Module[{m=l},m[[loc]]=m[[loc]]/.{p_?NumericQ/;p==1->\:ff0d,q_?NumericQ/;q==0->\:ff0b};m];
 bits1=Ceiling[Log2[d[[1]]]];
 bits2=Ceiling[Log2[d[[2]]]];
