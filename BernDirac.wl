@@ -27,6 +27,9 @@ DiracForm::usage="DiracForm[A] where A could be either a square matrix, a column
 SimpDiracForm::usage="SimpDiracForm[A] where A could be either a square matrix, a column vector or a row vector. It outputs the given input in Dirac notation where the terms with common coefficients are grouped together."
 
 
+Fidelity::usage="Fidelity[\[Rho],\[Sigma]] returns the fidelity given density matrices \[Rho] and \[Sigma]."
+
+
 Begin["`Private`"]
 
 
@@ -43,7 +46,7 @@ Ket[xsSeq___]:=Catch[With[{xs={xsSeq}}
 ,
 Module[{ket,tket,n=Length[xs]},
 Do[
-tket=Which[SameQ[xs[[t]],0],{{1},{0}},SameQ[xs[[t]],1],{{0},{1}},SameQ[xs[[t]],\:ff0b],{{1/Sqrt[2]},{1/Sqrt[2]}},SameQ[xs[[t]],\:ff0d],{{1/Sqrt[2]},{-(1/Sqrt[2])}},True,Throw[$Failed]];
+tket=Which[SameQ[xs[[t]],0],{{1},{0}},SameQ[xs[[t]],1],{{0},{1}},Or[SameQ[xs[[t]],\:ff0b],SameQ[xs[[t]],"+"]],{{1/Sqrt[2]},{1/Sqrt[2]}},Or[SameQ[xs[[t]],\:ff0d],SameQ[xs[[t]],"-"]],{{1/Sqrt[2]},{-(1/Sqrt[2])}},True,Throw[$Failed]];
 If[t==1
 ,ket=tket;
 ,ket=KroneckerProduct[ket,tket];
@@ -73,7 +76,7 @@ Bra[Subscript[a_Symbol, n___]]:=Ket[Subscript[a, n]]\[ConjugateTranspose];
 
 
 Options[PartialTr]={"Basis"->Automatic}
-PartialTr[a_List,loc_List,OptionsPattern[]]:=Catch[
+PartialTr[a_,loc_List,OptionsPattern[]]:=Catch[
 With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Length[loc]]]},
 Module[{\[Rho]=a,d=Dimensions[a],bits1,bits2,sortedloc,loclength=Length[loc],sortedbasis,basislength,lk0,lk1,\[DoubleStruckCapitalI]k0,\[DoubleStruckCapitalI]k1,\[DoubleStruckCapitalI]b0,\[DoubleStruckCapitalI]b1,k0={{1},{0}},k1={{0},{1}},kp={{1/Sqrt[2]},{1/Sqrt[2]}},kn={{1/Sqrt[2]},{-(1/Sqrt[2])}}},
 bits1=Ceiling[Log2[d[[1]]]];
@@ -158,7 +161,7 @@ $Failed
 
 
 Options[DiracForm]={"Basis"->Automatic}
-DiracForm[a_List,OptionsPattern[]]:=Catch[
+DiracForm[a_,OptionsPattern[]]:=Catch[
 With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Max[Ceiling[Log2[Dimensions[a][[1]]]],Ceiling[Log2[Dimensions[a][[2]]]]]]]},
 Module[{mutable\[Ellipsis]a,sum,d=Dimensions[a],bits1,bits2,maxbits,dBra,dKet,unitary,KProduct,where\[Ellipsis]X,ReplaceBasis},
 dBra[{b1__}]:=Defer[Bra[b1]];
@@ -226,6 +229,9 @@ Throw[$Failed]
 ];
 out=c*Dot[sum,unique\[Ellipsis]coeff/c];
 out]];
+
+
+Fidelity[\[Rho]_,\[Sigma]_]:=Re[Tr[MatrixPower[MatrixPower[\[Rho],1/2] . \[Sigma] . MatrixPower[\[Rho],1/2],1/2]]]^2;
 
 
 End[];
