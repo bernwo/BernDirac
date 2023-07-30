@@ -42,7 +42,7 @@ out
 ]];
 
 
-Ket[xsSeq___]:=Catch[With[{xs={xsSeq}}
+Ket[xsSeq___]:=Catch[With[{xs=If[$VersionNumber >= 13.3, xsSeq, {xsSeq}]}
 ,
 Module[{ket,tket,n=Length[xs]},
 Do[
