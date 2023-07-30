@@ -164,8 +164,14 @@ Options[DiracForm]={"Basis"->Automatic}
 DiracForm[a_,OptionsPattern[]]:=Catch[
 With[{basis=Replace[OptionValue["Basis"],Automatic:>ConstantArray["Z",Max[Ceiling[Log2[Dimensions[a][[1]]]],Ceiling[Log2[Dimensions[a][[2]]]]]]]},
 Module[{mutable\[Ellipsis]a,sum,d=Dimensions[a],bits1,bits2,maxbits,dBra,dKet,unitary,KProduct,where\[Ellipsis]X,ReplaceBasis},
+If[$VersionNumber>=13.3,
+dBra[b1__]:=Defer[Bra[b1]];
+dKet[b2__]:=Defer[Ket[b2]];
+,
 dBra[{b1__}]:=Defer[Bra[b1]];
 dKet[{b2__}]:=Defer[Ket[b2]];
+];
+
 KProduct[{u___},maxbits_]:=If[maxbits>1,KroneckerProduct[u],{u}[[1,All,All]]];
 ReplaceBasis[{l___},loc_List]:=Module[{m=l},m[[loc]]=m[[loc]]/.{p_?NumericQ/;p==1->\:ff0d,q_?NumericQ/;q==0->\:ff0b};m];
 bits1=Ceiling[Log2[d[[1]]]];
