@@ -1,8 +1,7 @@
 # BernDirac
 
 [![Wolfram Language](https://wolfr.am/NyiJ4BVJ)](https://www.wolfram.com/language/)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernie-wu/BernDirac)
+[![Platforms](https://img.shields.io/badge/Platform-Windows/MacOS/Linux-crimson)](https://github.com/bernwo/BernDirac)
 
 ![BernDiracLogo](Image/Logo/BernDirac_logo_v2.svg)
 
@@ -14,7 +13,7 @@ The package was written in Wolfram Mathematica version [12.2](https://www.wolfra
 
 # How to use?
 
-Download [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line to load the package into your current Mathematica session:
+Download [BernDirac.wl](https://github.com/bernwo/BernDirac/blob/main/BernDirac.wl) and place it wherever you like. Then, in your Mathematica notebook, run the following line to load the package into your current Mathematica session:
 
 ```wolframlanguage
 Get[<path-to-BernDirac.wl>];
@@ -22,7 +21,7 @@ Get[<path-to-BernDirac.wl>];
 
 # Functions that this package provides
 
-After loading [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session, the following additional functions become available to use:
+After loading [BernDirac.wl](https://github.com/bernwo/BernDirac/blob/main/BernDirac.wl) into your Mathematica notebook session, the following additional functions become available to use:
 
 - [`Ket[]`](#Ket "Go-to Ket[]")
 - [`Bra[]`](#Bra "Go-to Bra[]")
@@ -160,16 +159,4 @@ The dotted `Φ` alias can be accessed with <code><kbd>esc</kbd>.CapitalPhi<kbd>e
 > > ![Out:Example3](Image/Example/eg_matrixexp_out.svg "Example3")
 
 **Examples in Mathematica notebook**  
-A Mathematica notebook .nb file showing some usage examples can be found in the [Example](https://github.com/bernie-wu/BernDirac/tree/main/Example) folder.
-
-# Who am I and why did I create this package?
-
-At the time of writing this I am a graduate student with homework assignments involved in heavy and tedious quantum mechanics calculations.
-
-I created this Mathematica package to ease my life and since it helped me a tonne, I figured I should share this with the public too in case someone is also in the same boat as me.
-
-I also know that there are other Mathematica packages out there that provides Dirac notation but those are too complicated to use for my taste, which is also partially why I made this package.
-
-# TO-DO
-
-- Write better _usage_ descriptions in [BernDirac.wl](https://github.com/bernie-wu/BernDirac/blob/main/BernDirac.wl).
+A Mathematica notebook .nb file showing some usage examples can be found in the [Example](https://github.com/bernwo/BernDirac/tree/main/Example) folder.
